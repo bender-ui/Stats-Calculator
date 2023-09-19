@@ -6,8 +6,13 @@ public class sort {
 
     public String[] sortString(String inputStr) {
 
-        String[] parts = inputStr.split(", ");
-        return parts;
-
+        try {
+            String[] parts = inputStr.split(", ");
+            return parts;
+        } catch (NumberFormatException e) {
+            System.err.println("Bad input: " + e.getMessage());
+            String[] nun = new String['0'];
+            return nun;
+        }
     }
 }
