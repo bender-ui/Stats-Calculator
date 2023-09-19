@@ -4,14 +4,25 @@ public class sort {
         System.out.println(args);
     }
 
-    public String[] sortString(String inputStr) {
+    public double[] sortString(String inputStr) {
 
         try {
             String[] parts = inputStr.split(", ");
-            return parts;
+            double[] sorted = new double[parts.length];
+
+            int i = 0;
+            for (String str : parts) {
+                double temp = Double.parseDouble(str);
+                sorted[i] = temp;
+                i++;
+
+            }
+
+            return sorted;
+
         } catch (NumberFormatException e) {
-            System.err.println("Bad input: " + e.getMessage());
-            String[] nun = new String['0'];
+            System.out.println("Bad input: " + e.getMessage());
+            double[] nun = new double[0];
             return nun;
         }
     }

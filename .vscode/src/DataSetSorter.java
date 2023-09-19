@@ -9,18 +9,21 @@ public class DataSetSorter {
         String type = scanner.nextLine();
 
         sort s = new sort();
+        sample_standard_deviation sample = new sample_standard_deviation();
+        population_standard_deviation population = new population_standard_deviation();
 
         if (type.equals("p")) {
             System.out.print("Enter the popualtion: ");
             String string = scanner.nextLine();
-            s.sortString(string);
+            double[] popStr = s.sortString(string);
+            population.popualtionST(popStr);
 
         }
         if (type.equals("s")) {
             System.out.print("Enter the sample: ");
             String string = scanner.nextLine();
-            s.sortString(string);
-
+            double[] samStr = s.sortString(string);
+            sample.sampleST(samStr);
         }
         scanner.close();
 
